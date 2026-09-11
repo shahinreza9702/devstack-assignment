@@ -22,7 +22,19 @@ function App() {
     <>
       <Navbar></Navbar>
       <Hero></Hero>
-      <Suspense fallback={<h2>Loading technologies...</h2>}>
+      <Suspense
+        fallback={
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-left">
+              Explore the <span className="text-pink-600">Technologies</span>
+            </h2>
+            <p className="text-lg text-left text-gray-600 mt-4">
+              Pick one technology per category to build your ideal stack.
+            </p>
+            <h2>Loading technologies...</h2>
+          </div>
+        }
+      >
         <TechnologySection
           technologiesPromise={technologiesPromise}
         ></TechnologySection>

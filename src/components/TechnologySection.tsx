@@ -21,9 +21,11 @@ const TechnologySection = ({ technologiesPromise }: TechnologySectionProps) => {
         </p>
         <div className="grid grid-cols-4 gap-6">
           <div className="col-span-3 grid grid-cols-3 gap-6">
-            {technologies.map((technology) => (
-              <TechnologyCard key={technology.id} technology={technology} />
-            ))}
+            {technologies.map((technology: Technology) => {
+              return (
+                <TechnologyCard key={technology.id} technology={technology} />
+              );
+            })}
           </div>
           <div className="col-span-1">
             <StackPanel>

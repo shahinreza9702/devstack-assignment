@@ -1,34 +1,102 @@
 import HeroImage from "../../public/images/banner-stack.png";
 const Hero = () => {
   return (
-    <section className="hero min-h-[calc(100vh-4rem)] bg-base-100">
-      <div className="container mx-auto flex min-h-[calc(100vh-4rem)] items-center px-4">
-        <div className="flex w-full items-center justify-between gap-12">
-          <div className="flex w-1/2 flex-col gap-5">
-            <h1 className="text-5xl font-bold">Build Your Ideal</h1>
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
-              Development Stack
+    <section className="relative overflow-hidden bg-base-100">
+      {/* Background decorations */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-purple-200/30 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-orange-200/30 blur-3xl" />
+
+      <div className="container relative mx-auto flex min-h-[calc(100vh-4rem)] items-center px-4 py-16 lg:py-20">
+        <div className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Content */}
+          <div className="flex flex-col items-start">
+            {/* Small badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-600" />
+
+              <span className="text-sm font-medium text-gray-600">
+                Build. Compare. Create.
+              </span>
+            </div>
+
+            {/* Heading */}
+            <h1 className="max-w-2xl text-4xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              Build Your Ideal
+              <span className="mt-2 block bg-gradient-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
+                Development Stack
+              </span>
             </h1>
-            <p className="text-lg text-[#475569] w-3/4">
+
+            {/* Description */}
+            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
               Explore frontend, backend, database, and tooling options, compare
               them side by side, and put together the stack that fits your next
               project.
             </p>
-            <div className="flex items-center gap-5">
-              <button className="btn bg-gradient-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] text-white px-6 py-2 rounded-md hover:from-[#D81B7E] hover:via-[#7C3AED] hover:to-[#FF5722]">
+
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <button
+                type="button"
+                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] px-6 py-3 font-semibold text-white shadow-lg shadow-pink-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-pink-500/30"
+              >
                 Explore Technologies
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </button>
-              <button className="btn bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 px-6 py-2 rounded-md">
+
+              <button
+                type="button"
+                className="rounded-xl border border-gray-200 bg-white px-6 py-3 font-semibold text-gray-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gray-300 hover:bg-gray-50 hover:shadow-md"
+              >
                 Learn More
               </button>
             </div>
+
+            {/* Small stats */}
+            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-gray-500">
+              <div>
+                <span className="font-bold text-gray-900">50+</span>{" "}
+                Technologies
+              </div>
+
+              <div className="h-5 w-px bg-gray-200" />
+
+              <div>
+                <span className="font-bold text-gray-900">4</span> Categories
+              </div>
+
+              <div className="h-5 w-px bg-gray-200" />
+
+              <div>
+                <span className="font-bold text-gray-900">100%</span>{" "}
+                Customizable
+              </div>
+            </div>
           </div>
-          <div className="flex w-1/2 items-center justify-center">
-            <img
-              src={HeroImage}
-              alt="Hero"
-              className="w-full max-w-xl h-auto"
-            />
+
+          {/* Hero Image */}
+          <div className="relative flex items-center justify-center lg:justify-end">
+            {/* Glow behind image */}
+            <div className="absolute h-72 w-72 rounded-full bg-gradient-to-r from-orange-400/20 via-pink-500/20 to-purple-500/20 blur-3xl sm:h-96 sm:w-96" />
+
+            <div className="relative w-full max-w-xl">
+              <img
+                src={HeroImage}
+                alt="Development stack illustration"
+                className="h-auto w-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
           </div>
         </div>
       </div>

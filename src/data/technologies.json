@@ -14,7 +14,7 @@
     "name": "Next.js",
     "category": "Frontend",
     "description": "A React framework for building fast, scalable, and SEO-friendly web applications.",
-    "icon": "../../public/images/technologies/nextjs.svg",
+    "icon": "../../public/images/technologies/next.js.svg",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Fast"
@@ -24,7 +24,7 @@
     "name": "Node.js",
     "category": "Backend",
     "description": "A JavaScript runtime that enables scalable server-side and backend application development.",
-    "icon": "../../public/images/technologies/nodejs.svg",
+    "icon": "../../public/images/technologies/node.js.svg",
     "rating": 4.7,
     "difficulty": "Intermediate",
     "badge": "Popular"
@@ -44,7 +44,7 @@
     "name": "PostgreSQL",
     "category": "Database",
     "description": "A powerful open-source relational database known for reliability and advanced SQL capabilities.",
-    "icon": "../../public/images/technologies/postgresql.svg",
+    "icon": "../../public/images/technologies/PostgresSQL.svg",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Essential"
@@ -84,7 +84,7 @@
     "name": "Tailwind CSS",
     "category": "Styling",
     "description": "A utility-first CSS framework for rapidly creating modern and responsive user interfaces.",
-    "icon": "../../public/images/technologies/tailwindcss.svg",
+    "icon": "../../public/images/technologies/Tailwind-CSS.svg",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "Fast"
