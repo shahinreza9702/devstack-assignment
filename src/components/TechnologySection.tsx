@@ -1,8 +1,15 @@
+import { use } from "react";
 import StackItem from "./StackItem";
 import StackPanel from "./StackPanel";
 import TechnologyCard from "./TechnologyCard";
+import type { Technology } from "../types/technology";
 
-const TechnologySection = () => {
+interface TechnologySectionProps {
+  technologiesPromise: Promise<Technology[]>;
+}
+
+const TechnologySection = ({ technologiesPromise }: TechnologySectionProps) => {
+  const technologies = use(technologiesPromise);
   return (
     <section className="technology-section py-12 bg-base-100">
       <div className="container mx-auto px-4">
@@ -14,9 +21,9 @@ const TechnologySection = () => {
         </p>
         <div className="grid grid-cols-4 gap-6">
           <div className="col-span-3 grid grid-cols-3 gap-6">
-            <TechnologyCard></TechnologyCard>
-            <TechnologyCard></TechnologyCard>
-            <TechnologyCard></TechnologyCard>
+            {technologies.map((technology) => (
+              <TechnologyCard key={technology.id} technology={technology} />
+            ))}
           </div>
           <div className="col-span-1">
             <StackPanel>

@@ -3,9 +3,9 @@ const Footer = () => {
   return (
     <footer className="bg-white py-4">
       <div className="container mx-auto px-4">
-        <div className="flex justify-left justify-between mb-4">
+        <div className="flex justify-start justify-between mb-4 gap-12">
           <div className="flex flex-col gap-6">
-            <img src={Logo} alt="DevStack Logo" className="h-10 w-auto" />
+            <img src={Logo} alt="DevStack Logo" className="w-32" />
             <p>
               Curated tools, technologies, and resources for developers building
               modern software.
