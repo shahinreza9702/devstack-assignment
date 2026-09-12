@@ -6,4 +6,5 @@ export interface Technology {
   category: string;
   difficulty: string;
   rating: number;
+  badge: string;
 }

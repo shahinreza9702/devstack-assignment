@@ -1,9 +1,17 @@
 import StarRating from "../../public/images/technologies/Star-Rating.svg";
 import type { Technology } from "../types/technology";
+import { badgeColors } from "../types/badgeColors";
 interface TechnologyCardProps {
   technology: Technology;
+  isInStack: boolean;
+  onAdd: () => void;
 }
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+
+const TechnologyCard = ({
+  technology,
+  isInStack,
+  onAdd,
+}: TechnologyCardProps) => {
   return (
     <div className="bg-base-100 p-6 rounded-md shadow-md">
       <div className="flex items-center justify-between">
@@ -13,8 +21,12 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
           className="w-16 h-16 object-contain"
         />
 
-        <span className="text-sm text-[#0EA5E9] border border-[#E0F2FE] bg-[#F0F9FF] rounded-full px-4 py-1">
-          {technology.name}
+        <span
+          className={`badge ${
+            badgeColors[technology.badge] || badgeColors.default
+          } border rounded-4xl px-4 py-2 text-white`}
+        >
+          {technology.badge}
         </span>
       </div>
 
@@ -37,8 +49,17 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         </div>
       </div>
 
-      <button className="w-full bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded rounded-lg mt-4 transition-colors duration-200">
-        Add to Stack
+      <button
+        type="button"
+        onClick={onAdd}
+        disabled={isInStack}
+        className={`w-full font-bold py-2 px-4 rounded-lg mt-4 transition-colors duration-200 ${
+          isInStack
+            ? "bg-gray-400 text-white cursor-not-allowed"
+            : "bg-black hover:bg-gray-700 text-white"
+        }`}
+      >
+        {isInStack ? "Added to Stack" : "Add to Stack"}
       </button>
     </div>
   );
